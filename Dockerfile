@@ -28,6 +28,10 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# Copy the shell script into the image and make it executable
+COPY ./whisperTranscribeWrapper.sh /usr/local/bin/whisperx
+RUN chmod +x /usr/local/bin/whisperx
+
 # Set LD_LIBRARY_PATH for library location (if still necessary)
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/aarch64-linux-gnu/
 
