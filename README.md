@@ -16,6 +16,14 @@ docker run --rm -it -v $(pwd):/app justinwlin/whisperxmac:1.0 /bin/bash
 whisperx input.mp3 --compute_type int8 --language en
 ```
 
+# Original Repo:
+
+https://github.com/m-bain/whisperX
+
 # Github Issue:
 
+WhisperX doesn't run on mac due to pyannote.audio upgrading a dependency to a version that doesn't support mac.
 https://github.com/pyannote/pyannote-audio/issues/1505
+
+WhisperX Issue:
+https://github.com/m-bain/whisperX/issues/499
