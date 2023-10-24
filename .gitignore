@@ -1,0 +1,4 @@
+*.DS_Store*
+whisperX/build*
+*.vscode
+*__pycache__*
