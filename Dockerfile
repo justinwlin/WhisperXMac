@@ -1,9 +1,4 @@
-ARG WHISPER_MODEL=small
-ARG LANG=en
-ARG TORCH_HOME=/cache/torch
-ARG HF_HOME=/cache/huggingface
-ARG PLATFORM
-
+# FIRST STAGE: Install dependencies
 FROM python:3.10-slim as dependencies
 
 # Upgrade pip and setuptools
@@ -16,7 +11,15 @@ RUN pip install torch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 -f https://do
 COPY ./whisperX /whisperX
 RUN cd /whisperX && pip install .
 
+# SECOND STAGE: Final image
 FROM python:3.10-slim
+
+# Need to redeclare it due to multi-stage build process
+ARG WHISPER_MODEL=small
+ARG LANG=en
+ARG TORCH_HOME=/cache/torch
+ARG HF_HOME=/cache/huggingface
+ARG PLATFORM
 
 # Install system dependencies in the final stage
 RUN apt-get update && apt-get install -y \
