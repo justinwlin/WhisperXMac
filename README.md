@@ -18,6 +18,15 @@ This mounts your current working directory + then runs the whisperx command on t
 ```
 docker run --rm -it -v $(pwd):/app justinwlin/whisperxmac:1.0 /bin/bash
 whisperx input.mp3 --compute_type int8 --language en
+whisperx output.mp3 --compute_type int8 --language en --highlight_words True
+```
+
+# Depot
+
+I'm using Depot to build my Dockerfile, to build for mac / arm64:
+
+```
+depot build -t whisperx_image . --platform linux/arm64 --load
 ```
 
 # Original Repo:
