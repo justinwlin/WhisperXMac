@@ -7,7 +7,7 @@ https://hub.docker.com/repository/docker/justinwlin/whisperxmac/general
 Build Command:
 
 ```
-docker build -t whisperx_image . --load
+docker build -t whisperx_image .
 ```
 
 # Example how to run it and mount it on your current working directory
