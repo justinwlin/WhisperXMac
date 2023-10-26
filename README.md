@@ -1,3 +1,13 @@
+# Local Installation
+
+You can clone this repo, and install this directly as a python package instead of using the one off of the main repo. The setup.py is changed to support arm64 vs the main repo. You will need to specify the compute type and language.
+
+```
+cd whisperx
+pip3 install .
+whisperx input.mp3 --compute_type int8 --language en
+```
+
 # DockerHub Image:
 
 https://hub.docker.com/repository/docker/justinwlin/whisperxmac/general
